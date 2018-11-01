@@ -1,0 +1,278 @@
+html,body {
+	font-family: 'Raleway', sans-serif;
+	background-color: #000;
+	color:  #ddd;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+body.preload *{
+	animation-duration: 0s !important;
+	-webkit-animation-duration: 0s !important;
+	transition: opacity 0s !important;
+}
+
+body.preload infoButton, 
+body.preload genderAxle,
+body.preload h1 {
+	display: none;
+}
+
+body.preload controls {
+	width: 300px;
+	height: 300px;
+	left: 50%;
+	top: 50%;
+	margin-left: -150px;
+	margin-top: -150px;
+}
+body.preload controls svg path.play  { 
+	fill: #fff;
+	opacity: 0.8;
+}
+
+a {
+	color: #ddf;
+}
+
+a:active, a:hover {
+	color: #fff;
+}
+
+a:visited {
+	color: #ddd;
+}
+
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Ribeye', cursive;
+}
+
+
+h1.title {
+	font-size: 7vw;
+	display: block;
+	text-align: center;
+	margin-top: 0px;
+	padding-top: 10px;
+
+	background: #000; /* Old browsers */
+	background: -moz-linear-gradient(top, #48125B 0%, #000 50%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #48125B 0%,#000 50%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #48125B 0%,#000 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#48125B', endColorstr='#000444',GradientType=0 ); /* IE6-9 */
+}
+
+h1 c.b { color: #55ccfc; }
+h1 c.p { color: #f7a9b7; }
+h1 c.w { color: #ffffff; }
+
+
+genderWheel {
+	display: block;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -15vw;
+	margin-top: -15vw;
+
+	width: 30vw;
+	height: 30vw;
+	background: url(WHEEL-OF-GENDER.png);
+	background-size: cover;
+	transform: rotate(0deg);
+	animation-name: spinTheWheel;
+	animation-duration: 2s;
+	animation-delay: 0;
+	animation-iteration-count: infinite;
+	animation-direction: forward;
+}
+
+genderAxle {
+	opacity: 1;
+	animation-name: fadeIn;
+	animation-duration: 10s;
+	z-index: 50;
+}
+
+body.preload genderAxle {
+	opacity: 0;
+}
+
+
+
+
+
+
+controls {
+	position: fixed;
+	left: 10px;
+	bottom: 10px;
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+}
+
+
+controls svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+controls svg path.play,
+controls svg path.pause  { 
+	fill: #fff;
+	opacity: 0.3;
+	animation-name: fadeMostlyOut;
+	animation-duration: 0.2s;
+}
+controls:hover svg path.play,
+controls:hover svg path.pause,
+controls:active svg path.play,
+controls:active svg path.pause  { 
+	fill: #fff; 
+	opacity: 1;
+	animation-name: fadeInfromMostly;
+	animation-duration: 0.2s;
+}
+
+
+
+controls #pause {
+	display: none;
+}
+
+
+
+
+
+
+
+infoButton {
+	display: block;
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	cursor: pointer;
+}
+
+infoButton svg {
+	display: block;
+	width: 40px;
+	height: 40px;
+}
+
+infoButton svg path.info  { 
+	fill: #fff;
+	opacity: 0.3;
+	animation-name: fadeMostlyOut;
+	animation-duration: 0.2s;
+}
+infoButton:hover svg path.info,
+infoButton:active svg path.info,
+infoButton.show svg path.info { 
+	fill: #fff; 
+	opacity: 1;
+	animation-name: fadeInfromMostly;
+	animation-duration: 0.2s;
+}
+
+
+info {
+	display: none;
+	position: fixed;
+	left: 10%;
+	right: 10%;
+	background-color: #666;
+	padding: 20px;
+	z-index: 100;
+	opacity: 0;
+	animation-name: fadeOut;
+	animation-duration: 1s;
+}
+
+info.show {
+	display: block;
+	opacity: 1;
+	animation-name: fadeIn;
+	animation-duration: 1s;
+}
+
+legal {
+	text-align: center;
+	width: 50%;
+	margin-left: 25%;
+	font-size: 80%;
+	vertical-align: text-top;
+	display: block;
+}
+
+closeButton {
+	display: block;
+	background-color: #eee;
+	color: #000;
+	border-radius: 15px;
+	height: 30px;
+	width: 30px;
+	text-align: center;
+	vertical-align: middle;
+	position: absolute;
+	top: -5px;
+	right: -5px;
+	font-size: 22px;
+	cursor: pointer;
+}
+
+
+
+
+@keyframes fadeInfromMostly {
+    from {opacity: 0.3;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeMostlyOut {
+    from {opacity: 1;}
+    to {opacity: 0.3;}
+}
+
+@keyframes fadePartlyIn {
+    from {opacity: 0;}
+    to {opacity: 0.3;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+
+@keyframes spinTheWheel {
+	0% { transform: rotate(0deg); opacity: 0.50; }
+	16.665% { transform: rotate(0deg); opacity: 0.60; }
+
+	16.666% { transform: rotate(60deg); opacity: 0.60; }
+	33.332% { transform: rotate(60deg); opacity: 0.55; }
+	
+	33.333% { transform: rotate(120deg); opacity: 0.55; }
+	49.998% { transform: rotate(120deg); opacity: 0.60; }
+	
+	49.999% { transform: rotate(180deg); opacity: 0.60; }
+	66.665% { transform: rotate(180deg); opacity: 0.50; }
+
+	66.666% { transform: rotate(240deg); opacity: 0.50; }
+	83.332% { transform: rotate(240deg);  opacity: 0.70; }
+	
+	83.333% { transform: rotate(300deg); opacity: 0.70; }
+	99.998% { transform: rotate(300deg);  opacity: 0.50; }
+
+	99.999% { transform: rotate(0deg); }
+}
+

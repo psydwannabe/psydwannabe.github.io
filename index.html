@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Gender Zone</title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway|Ribeye" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="includes/style.css" />
+	<script type="text/javascript" src="includes/soundmanager2-nodebug-jsmin.js"></script>
+	<script type="text/javascript" src="includes/javascript.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body class="preload">
+	<h1 class="title"><c class="b">G</c><c class="b">e</c><c class="p">n</c><c class="p">d</c><c class="w">e</c><c class="w">r</c> <c class="p">Z</c><c class="p">o</c><c class="b">n</c><c class="b">e</c></h1>
+	
+	
+	<genderAxle>
+		<genderWheel/>
+	</genderAxle>
+	
+	<controls onclick="playPause();">
+		<svg id="play"  xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path class="play"  d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+		<svg id="pause" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path class="pause" d="M9 16h2V8H9v8zm3-14C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-4h2V8h-2v8z"/></svg>
+	</controls>
+	
+	<infoButton id="infoButton" onclick="toggleInfo();" title="Information" alt="Information">
+		<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path class="info" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+	</infoButton>
+	<info id="info">
+		<closeButton onclick="toggleInfo();" title="Close this window">x</closeButton>
+		<legal>
+			Contact the author at <a href='mail&#116;o&#58;%73ol%65&#105;l%40cortica&#108;stack&#46;n%&#54;5%74'>&#115;o&#108;&#101;&#105;l&#64;cortic&#97;l&#115;&#116;ack&#46;net</a>.
+			<br><br>
+			<a class="img" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br>
+				This website, along with its background music ("<span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Sound" property="dc:title" rel="dc:type">Cocktails In Space</span>"
+				by <a xmlns:cc="http://creativecommons.org/ns#" href="http://freemusicarchive.org/music/Dana_Countryman/" property="cc:attributionName" rel="cc:attributionURL">Dana Countryman</a>)
+				are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Attribution-NonCommercial License</a>.
+		</legal>
+	</info>
+</body>
+</html>
+
+
