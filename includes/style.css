@@ -191,6 +191,7 @@ info {
 	opacity: 0;
 	animation-name: fadeOut;
 	animation-duration: 1s;
+	border-radius: 5px;
 }
 
 info.show {
@@ -201,12 +202,24 @@ info.show {
 }
 
 legal {
-	text-align: center;
-	width: 50%;
-	margin-left: 25%;
-	font-size: 80%;
+	text-align: left;
+	width: 100%;
+	font-size: 100%;
 	vertical-align: text-top;
 	display: block;
+}
+
+legal a.license {
+	display: block;
+	float: left;
+	padding-right: 5px;
+	border: none;
+}
+
+legal h2 {
+	position: absolute;
+	top: -73px;
+	font-size: 250%;
 }
 
 closeButton {
