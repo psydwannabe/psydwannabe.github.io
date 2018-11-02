@@ -1,10 +1,12 @@
-var mySound,info,infoButton,initialized;
+var mySound,info,infoButton,initialized,playButton,pauseButton;
 document.addEventListener("click", init, true);
 
 window.onload = function(e){ 
 	// Define info section handlers
 	infoButton = document.getElementById("infoButton");
     info = document.getElementById("info");
+    playButton = document.getElementById("play");
+    pauseButton = document.getElementById("pause");
 
 	// initialize "initialized" variable
     initialized = false;
@@ -37,6 +39,26 @@ function init() {
 
 }
 
+
+function loopSound(pause) {
+	if(typeof pause === "undefined") {
+		var pause = false;
+	}
+	if(pause) {
+		mySound.pause();
+	} else {
+		if(mySound.paused) { mySound.togglePause(); }
+		else {
+			mySound.play({
+				onfinish: function() {
+					loopSound(false);
+	    		}
+  			});
+  		}
+	}
+}
+
+
 function checkKeyPressed(e) {
 	// Space bar plays or pauses
 	if (e.keyCode == "32") {
@@ -68,20 +90,20 @@ function toggleInfo() {
 	return false;
 }
 
+
+
 function playPause(toggle) {
 	if(typeof toggle === "undefined") {
 		var toggle = true;
 	}
-	if(toggle) {
-		mySound.togglePause();
-	}
-    var play = document.getElementById("play");
-    var pause = document.getElementById("pause");
-    if (play.style.display === "none") {
-        play.style.display = "block";
-        pause.style.display = "none";
+	
+    if (!mySound.playState || mySound.paused) {
+        playButton.style.display = "block";
+        pauseButton.style.display = "none";
+		if(toggle) { loopSound(false); }
     } else {
-        pause.style.display = "block";
-        play.style.display = "none";
+        pauseButton.style.display = "block";
+        playButton.style.display = "none";
+        if(toggle) { loopSound(true); }
     }
 }
